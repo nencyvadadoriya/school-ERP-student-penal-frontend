@@ -20,13 +20,14 @@ const StudentPrediction: React.FC<{ studentId: string }> = ({ studentId }) => {
   const [prediction, setPrediction] = useState<PredictionData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   useEffect(() => {
     const fetchPrediction = async () => {
       try {
         setLoading(true);
         // Use the same API structure as other student panel services
-        const response = await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/prediction/${studentId}`);
+        const response = await axios.get(`${apiBaseUrl}/api/prediction/${studentId}`);
         setPrediction(response.data);
         setError(null);
       } catch (err: any) {
