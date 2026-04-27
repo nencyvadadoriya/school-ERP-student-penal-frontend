@@ -28,6 +28,7 @@ import {
   FaBars,
   FaChevronLeft,
   FaChevronRight,
+  FaGraduationCap,
 } from 'react-icons/fa';
 
 const Sidebar = ({ isOpen, toggleSidebar, isCollapsed, setIsCollapsed }) => {
@@ -154,9 +155,11 @@ const Sidebar = ({ isOpen, toggleSidebar, isCollapsed, setIsCollapsed }) => {
         {/* Logo Section */}
     <div className="h-14 flex-shrink-0 flex items-center justify-between border-b border-gray-200  px-3">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7  rounded-lg flex items-center justify-center">
-              <FaSchool className="text-[#002B5B] text-base" />
-            </div>
+            {isCollapsed && (
+              <div className="w-8 h-8 bg-gradient-to-br from-[#002B5B] to-[#2D54A8] rounded-lg flex items-center justify-center mx-auto shadow-md">
+                <FaGraduationCap className="text-white text-xs" />
+              </div>
+            )}
             {!isCollapsed && <h1 className="text-base font-bold  tracking-tight">SmartSchool</h1>}
           </div>
           <button
