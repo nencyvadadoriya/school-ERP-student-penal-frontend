@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "School ERP System Frontend",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx tsc && npx vite build",
-    "preview": "npx vite preview",
-    "lint": "npx tsc --noEmit"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
     "axios": "^1.15.0",
